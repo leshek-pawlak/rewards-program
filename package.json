@@ -14,8 +14,9 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "test": "react-scripts test --watchAll --coverage",
+    "eject": "react-scripts eject",
+    "codecov": "codecov"
   },
   "eslintConfig": {
     "extends": [
@@ -37,6 +38,20 @@
   },
   "devDependencies": {
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
+    "codecov": "^3.8.3",
     "jest-fetch-mock": "^3.0.3"
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "src/**/*.js"
+    ],
+    "coveragePathIgnorePatterns": [
+      "/node_modules/",
+      "/test/"
+    ],
+    "coverageReporters": [
+      "lcov",
+      "text"
+    ]
   }
 }
