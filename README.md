@@ -1,5 +1,6 @@
-# Getting Started with Create React App
+# Rewards Program app
 
+This is a simple app that displays a list of customers and their rewards points. It also allows to filter the list by customer name and sort by rewards points.
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
@@ -16,11 +17,16 @@ You may also see any lint errors in the console.
 
 ### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+runs tests with coverage report
 
 ### `npm run build`
 
+builds production version of the app
+
 ### Deployment
 
-push on branch `main` runs the command `npm run build` on CircleCi and push the build folder to the surge.sh server.
+push on branch `main` runs the commands `npm run build` & `npm run deploy` on CircleCi and push the build folder to the surge.sh server.
+
+## Covereage Report
+
+[![codecov](https://codecov.io/gh/leshek-pawlak/rewards-program/graph/badge.svg?token=KMV6E5VMSY)](https://codecov.io/gh/leshek-pawlak/rewards-program)
