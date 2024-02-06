@@ -17,21 +17,6 @@ jobs:
             - node_modules
           key: v1-dependencies-{{ checksum "package-lock.json" }}
       - run: npm run test
-  build:
-    executor:
-      name: node/default
-    steps:
-      - checkout
-      - restore_cache:
-          keys:
-            - v1-dependencies-{{ checksum "package-lock.json" }}
-            - v1-dependencies-
-      - run: npm install
-      - save_cache:
-          paths:
-            - node_modules
-          key: v1-dependencies-{{ checksum "package-lock.json" }}
-      - run: npm run build
   deploy:
     executor:
       name: node/default
@@ -48,12 +33,12 @@ jobs:
           paths:
             - node_modules
           key: v1-dependencies-{{ checksum "package-lock.json" }}
+      - run: npm run build
       - run: npm run deploy
 workflows:
   build-and-deploy:
     jobs:
       - test
-      - build
       - deploy:
           requires:
             - test
