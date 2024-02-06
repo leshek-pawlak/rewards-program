@@ -2,26 +2,57 @@ version: 2.1
 orbs:
   node: circleci/node@5.2.0
 jobs:
+  test:
+    executor:
+      name: node/default
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - v1-dependencies-{{ checksum "package-lock.json" }}
+            - v1-dependencies-
+      - run: npm install
+      - save_cache:
+          paths:
+            - node_modules
+          key: v1-dependencies-{{ checksum "package-lock.json" }}
+      - run: npm run test
   build:
     executor:
       name: node/default
     steps:
       - checkout
+      - restore_cache:
+          keys:
+            - v1-dependencies-{{ checksum "package-lock.json" }}
+            - v1-dependencies-
       - run: npm install
-      - run: npm run test
+      - save_cache:
+          paths:
+            - node_modules
+          key: v1-dependencies-{{ checksum "package-lock.json" }}
       - run: npm run build
   deploy:
-    docker:
-      - image: cimg/node:lts
+    executor:
+      name: node/default
     steps:
       - checkout
       - attach_workspace:
           at: ~/repo
-      - run: npm install --global surge
-      - run: surge --project ./build --domain https://rewards-program-leszek-p.surge.sh
+      - restore_cache:
+          keys:
+            - v1-dependencies-{{ checksum "package-lock.json" }}
+            - v1-dependencies-
+      - run: npm install
+      - save_cache:
+          paths:
+            - node_modules
+          key: v1-dependencies-{{ checksum "package-lock.json" }}
+      - run: npm run deploy
 workflows:
   build-and-deploy:
     jobs:
+      - test
       - build
       - deploy:
           requires:
