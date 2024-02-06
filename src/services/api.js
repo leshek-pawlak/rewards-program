@@ -1,9 +1,9 @@
 export const fetchTransactions = async () => {
   try {
-    if (process.env.NODE_ENV !== "test") {
-      // wait 2 seconds to simulate a slow network
-      await new Promise((resolve) => setTimeout(resolve, 2000));
-    }
+    // wait 2 seconds to simulate a slow network
+    await new Promise((resolve) =>
+      setTimeout(resolve, process.env.NODE_ENV === "test" ? 0 : 2000)
+    );
     const response = await fetch(
       `${window.location.origin}/data/transactions.json`
     );
