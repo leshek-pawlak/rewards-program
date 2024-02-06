@@ -38,11 +38,5 @@
   "devDependencies": {
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "jest-fetch-mock": "^3.0.3"
-  },
-  "jest": {
-    "automock": false,
-    "setupFiles": [
-      "./src/setupTests.js"
-    ]
   }
 }
