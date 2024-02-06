@@ -30,3 +30,5 @@ push on branch `main` runs the commands `npm run build` & `npm run deploy` on Ci
 ## Covereage Report
 
 [![codecov](https://codecov.io/gh/leshek-pawlak/rewards-program/graph/badge.svg?token=KMV6E5VMSY)](https://codecov.io/gh/leshek-pawlak/rewards-program)
+
+![Graph](https://codecov.io/gh/leshek-pawlak/rewards-program/graphs/tree.svg?token=KMV6E5VMSY)
