@@ -7,7 +7,7 @@ jobs:
       name: node/default
     steps:
       - checkout
-      - run: npm run install
+      - run: npm install
       - run: npm run test
       - run: npm run build
   deploy:
@@ -18,7 +18,7 @@ jobs:
       - attach_workspace:
           at: ~/repo
       - run: npm install --global surge
-      - run: surge --project ./build --domain rewards-program.surge.sh
+      - run: surge --project ./build --domain https://rewards-program-leszek-p.surge.sh
 workflows:
   build-and-deploy:
     jobs:
