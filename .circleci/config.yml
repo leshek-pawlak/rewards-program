@@ -18,7 +18,9 @@ jobs:
             - node_modules
           key: v1-dependencies-{{ checksum "package-lock.json" }}
       - run: npm run test
-      - codecov/upload
+      - codecov/upload:
+          file: ./coverage/lcov.info
+          token: CODECOV_TOKEN
   deploy:
     executor:
       name: node/default
