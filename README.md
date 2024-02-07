@@ -1,6 +1,6 @@
 # Rewards Program app
 
-Link to the app: [Rewards Program](https://rewards-program-leszek-p.surge.sh)
+Link to the app: [Rewards Program](https://rewards-program-leszek-p.surge.sh) [![CircleCI](https://dl.circleci.com/status-badge/img/circleci/45K48xjxsy9hvqdqUutYJ6/S41vYihAs3i7VwZmBRWv5q/tree/main.svg?style=svg&circle-token=4dac2df3f809e792e9960827fba8a7aca56b6325)](https://dl.circleci.com/status-badge/redirect/circleci/45K48xjxsy9hvqdqUutYJ6/S41vYihAs3i7VwZmBRWv5q/tree/main)
 
 This is a simple app that displays a list of customers and their rewards points. It also allows to filter the list by customer name and sort by rewards points.
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
