@@ -1,5 +1,7 @@
 # Rewards Program app
 
+Link to the app: [Rewards Program](https://rewards-program.surge.sh/)
+
 This is a simple app that displays a list of customers and their rewards points. It also allows to filter the list by customer name and sort by rewards points.
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
@@ -25,7 +27,7 @@ builds production version of the app
 
 ### Deployment
 
-push on branch `main` runs the commands `npm run build` & `npm run deploy` on CircleCi and push the build folder to the surge.sh server.
+push on branch `main` runs the commands `npm run build` & `npm run deploy` on CircleCi and push the build folder to the surge.sh https://rewards-program-leszek-p.surge.sh.
 
 ## Covereage Report
 
