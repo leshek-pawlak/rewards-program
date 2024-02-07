@@ -1,6 +1,6 @@
 # Rewards Program app
 
-Link to the app: [Rewards Program](https://rewards-program.surge.sh/)
+Link to the app: [Rewards Program](https://rewards-program-leszek-p.surge.sh)
 
 This is a simple app that displays a list of customers and their rewards points. It also allows to filter the list by customer name and sort by rewards points.
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
